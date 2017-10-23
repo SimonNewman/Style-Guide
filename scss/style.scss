@@ -1,0 +1,167 @@
+$font-size: 18px;
+$text-colour: #565656;
+
+$primary-colour: #76323f;
+$secondary-colour: #c09f80;
+
+$heading-font: 'Fjalla One';
+
+$body-font: 'Cantarell';
+
+$body-normal: 400;
+$body-bold: 600;
+
+$heading-normal: 400;
+
+$element-text-colour: #aaa;
+
+@import 'reset';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+  width: 210mm;
+  height: 297mm;
+}
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
+body {
+  color: $text-colour;
+  font-size: $font-size;
+  font-family: $body-font;
+  line-height: 1.6;
+}
+
+header {
+  background: $primary-colour;
+  height: 300px;
+}
+
+.logo {
+  dispay: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-size: 50px / $font-size * 1em;
+  font-family: $heading-font;
+  color: $primary-colour;
+  text-transform: uppercase;
+}
+
+.element-name {
+  font-size: 14px / $font-size * 1em;
+  font-weight: $body-bold;
+  text-transform: uppercase;
+  color: $element-text-colour;
+  margin-bottom: 10px;
+}
+
+.two-columns {
+  background: #f9f9f9;
+  padding: 200px 400px;
+  position: relative;
+  display: flex;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  width: 50%;
+}
+
+.left-column {
+  margin-right: 60px;
+}
+
+.section-name {
+  position: absolute;
+  font-family: $heading-font;
+  top: 260px;
+  left: 140px;
+  transform: rotate(-90deg);
+  color: $primary-colour;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  &::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 60px;
+    position: absolute;
+    left: -80px;
+    top: calc(50% - 1px);
+    background: $primary-colour;
+  }
+}
+
+.element {
+  margin-bottom: 80px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $primary-colour;
+  font-family: $heading-font;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 36px / $font-size * 1em;
+}
+
+h2 {
+  font-size: 30px / $font-size * 1em;
+}
+
+h3 {
+  font-size: 24px / $font-size * 1em;
+}
+
+h4 {
+  font-size: 20px / $font-size * 1em;
+}
+
+.font-family,
+.font-weight,
+.font-size,
+.font-color {
+  color: $element-text-colour;
+}
+
+.colours {
+  .colour-group {
+    width: 50px;
+    height: 153px;
+    .colour {
+      height: 50px;
+      width: 50px;
+      margin-bottom: 1px;
+    }
+  }
+  .primary {
+    .colour-1 {
+      background: $primary-colour;
+    }
+    .colour-2 {
+      background: lighten($primary-colour, 25%);
+    }
+    .colour-3 {
+      background: lighten($primary-colour, 50%);
+    }
+  }
+}
